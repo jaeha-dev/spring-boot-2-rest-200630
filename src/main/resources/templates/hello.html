@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>Hello Page</title>
+</head>
+
+<body>
+    <h1 th:text="${hello?.message}"></h1>
+    <p th:text="${#temporals.format(hello?.currentTime, 'yyyy-MM-dd HH:mm')}"></p>
+</body>
+</html>

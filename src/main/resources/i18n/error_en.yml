@@ -1,0 +1,23 @@
+unknown:
+  code: "-1000"
+  message: "An unknown error has occurred."
+
+userNotFound:
+  code: "-2000"
+  message: "This account does not exist."
+
+emailLoginFailed:
+  code: "-2001"
+  message: "Your account does not exist or your email or password does not match."
+
+entryPointException:
+  code: "-2002"
+  message: "You don't have permission to access that resource."
+
+accessDenied:
+  code: "-2003"
+  message: "The resource is not accessible with that permission."
+
+registeredUser:
+  code: "-2004"
+  msg: "This account is already registered. Please log in with your registered account."

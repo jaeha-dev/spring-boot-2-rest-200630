@@ -1,0 +1,49 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.1.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+}
+
+group = 'com.github'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'     //
+    compile 'org.springframework.boot:spring-boot-starter-web'          //
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'     //
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'    // Thymeleaf (템플릿 엔진)
+    compile 'org.springframework.boot:spring-boot-starter-security'     //
+    compile 'io.jsonwebtoken:jjwt:0.9.1'                                // JWT (Json Web Token)
+    // compile 'io.springfox:springfox-swagger2:2.9.2'                  // Swagger (java.lang.NumberFormatException: For input string: "" 에러 발생으로 모듈 2개 다운그레이드)
+    compile('io.springfox:springfox-swagger2:2.9.2') {                  // Swagger
+        exclude module: 'swagger-annotations'
+        exclude module: 'swagger-models'
+    }
+    compile 'io.springfox:springfox-swagger-ui:2.9.2'                   // Swagger
+    compile 'io.swagger:swagger-annotations:1.5.21'                     // Swagger
+    compile 'io.swagger:swagger-models:1.5.21'                          // Swagger
+    compile 'net.rakugakibox.util:yaml-resource-bundle:1.1'             // 다국어 메시지 처리 시, properties 대신 YAML 파일을 사용할 수 있도록 지원
+    compile 'com.google.code.gson:gson'                                 // Gson
+    compileOnly 'org.projectlombok:lombok'                              //
+    runtimeOnly 'com.h2database:h2'                                     //
+    annotationProcessor 'org.projectlombok:lombok'                      //
+    testCompile 'org.projectlombok:lombok'                              //
+    testCompile 'org.springframework.boot:spring-boot-starter-test'     //
+    testCompile 'org.springframework.security:spring-security-test'     //
+    testAnnotationProcessor 'org.projectlombok:lombok'                  //
+}
+
+test {
+    useJUnitPlatform()
+}
