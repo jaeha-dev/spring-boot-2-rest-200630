@@ -15,6 +15,4 @@ public class DevsjhApplication {
     public static void main(String[] args) {
         SpringApplication.run(DevsjhApplication.class, args);
     }
-
-    // https://kauth.kakao.com/oauth/authorize?client_id=e37542e304ec631fa85bd3a0a1101a27&redirect_uri=http://localhost:8080/social/login/kakao&response_type=code
 }
